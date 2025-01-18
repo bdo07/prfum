@@ -41,11 +41,14 @@ const ModelViewer = () => {
           height: "100vh",
         }}
       >
+
         <ambientLight intensity={0.6} />
         <directionalLight position={[10, 10, 10]} intensity={0.8} />
-        <Model path="./perfume_bottle.glb" />
+
+        <Model path="../perfume_bottle.glb" />
       
       </Canvas>
+
     </div>
   );
 };

@@ -9,14 +9,27 @@ import { faSearch, faShoppingBag, faUser } from "@fortawesome/free-solid-svg-ico
 
 import logo from "../public/logo.jpeg"
 // Importation des composants
-import ModelViewer from "./ ModelViewer.jsx";
-import Footer from "./FOOTER/Footer.jsx";
-import Home from "./MENU/Home";
-import ParfumFemme from "./MENU/ParfumFemme";
-import ParfumHomme from "./MENU/ParfumHomme";
-import Promotion from "./MENU/Promotion";
+
+
+import Footer from "./redux/FOOTER/Footer.jsx";
+import Home from "./redux/MENU/Home";
+import ParfumFemme from "./redux/MENU/ParfumFemme";
+import ParfumHomme from "./redux/MENU/ParfumHomme";
+import Promotion from "./redux/MENU/Promotion";
+import CreateCompte from "./redux/MENU/CreateCompte"
+import SearchProduct from './redux/MENU/SearchProduct';
+import Panier from "./redux/MENU/Panier";
+
+
+// importation des file text animation 
+import BlurText from "./redux/AnimationTest/BlurText.jsx";
+
+const handleAnimationComplete = () => {
+  console.log('Animation completed!');
+};
 
 export default function App() {
+
   const styles = {
     navbar: {
       display: "flex",
@@ -65,6 +78,10 @@ export default function App() {
 
   return (
     <>
+
+
+
+      
       <Router>
         <div>
           <nav style={styles.navbar}>
@@ -137,7 +154,7 @@ export default function App() {
                 <FontAwesomeIcon icon={faSearch} />
               </Link>
               <Link
-                to="/cart"
+                to="/panier"
                 style={styles.icon}
                 onMouseEnter={(e) => {
                   e.target.style.color = styles.iconHover.color;
@@ -157,10 +174,30 @@ export default function App() {
             <Route path="/parfum-femme" element={<ParfumFemme />} />
             <Route path="/parfum-homme" element={<ParfumHomme />} />
             <Route path="/promotion" element={<Promotion />} />
+
+            <Route path="/account" element={<CreateCompte />} />
+            <Route path="/search" element={<SearchProduct />} />
+            <Route path="/panier" element={<Panier />} />
+
+
           </Routes>
         </div>
       </Router>
-      <ModelViewer />
+
+
+
+
+      <div className="App">
+      <BlurText
+  text="PARFUMS AMAN"
+  delay={150}
+  animateBy="words"
+  direction="top"
+  onAnimationComplete={handleAnimationComplete}
+  className="large-text mb-8"
+/>
+
+    </div>
       <Footer />
     </>
   );

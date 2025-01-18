@@ -1,4 +1,3 @@
-import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -11,6 +10,7 @@ function Footer() {
           <div>
             {['facebook-f', 'twitter', 'google', 'instagram', 'linkedin', 'github'].map((icon) => (
               <a key={icon} href="#" className="text-white me-4">
+
                 <i className={`fab fa-${icon}`}></i>
               </a>
             ))}
@@ -48,7 +48,7 @@ function Footer() {
                 <hr style={{ width: '60px', backgroundColor: '#7c4dff', height: '2px' }} />
                 <p><i className="fas fa-home me-3"></i> New York, États-Unis</p>
                 <p><i className="fas fa-envelope me-3"></i> info@example.com</p>
-                <p><i className="fas fa-phone me-3"></i> +01 234 567 88</p>
+                <p><i className="fas fa-phone me-3"></i> 05 234 567 88</p>
               </div>
             </div>
           </div>
